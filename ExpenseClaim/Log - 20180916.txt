@@ -1,0 +1,9 @@
+2018-09-16 19:39:45.155 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-16 19:39:45.362 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-16 19:39:50.859 +10:00 [Information] Executed DbCommand ("183"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"

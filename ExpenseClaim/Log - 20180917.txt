@@ -1,0 +1,309 @@
+2018-09-17 00:45:39.182 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 00:45:39.246 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 00:45:41.310 +10:00 [Information] Executed DbCommand ("132"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-17 00:45:42.669 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:45:42.726 +10:00 [Warning] Query: '"(from CostCenter <generated>_1 in DbSet<CostCenter> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results.
+2018-09-17 00:45:42.868 +10:00 [Information] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:45:43.083 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:45:45.700 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:45:45.718 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:45:45.878 +10:00 [Information] Executed DbCommand ("11"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:45:45.895 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:45:45.910 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 2813.5751ms.
+2018-09-17 00:45:45.927 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:45:45.983 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 3299.8787ms
+2018-09-17 00:46:14.029 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:46:14.062 +10:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:46:14.068 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 15 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:46:16.259 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:46:16.266 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:46:16.282 +10:00 [Information] Executed DbCommand ("8"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:46:16.293 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:46:16.298 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 2225.4439ms.
+2018-09-17 00:46:16.304 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:46:16.310 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 2275.8696ms
+2018-09-17 00:46:38.447 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:46:38.477 +10:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:46:38.487 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:46:41.065 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:46:41.073 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:46:41.081 +10:00 [Information] Executed DbCommand ("2"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:46:41.092 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:46:41.096 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 2605.0864ms.
+2018-09-17 00:46:41.099 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:46:41.105 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 2652.256ms
+2018-09-17 00:47:22.714 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:47:22.727 +10:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:47:22.741 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday11, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:47:29.749 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:48:13.507 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:48:13.520 +10:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:48:13.530 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:48:13.534 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 50788.6ms.
+2018-09-17 00:48:13.538 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:48:13.542 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 50824.1366ms
+2018-09-17 00:49:50.716 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:49:50.728 +10:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:49:50.734 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre>DEV002</cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:49:52.879 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:49:52.888 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:49:52.909 +10:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:49:52.914 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:49:52.922 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 2180.1007ms.
+2018-09-17 00:49:52.927 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:49:52.933 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 2210.7812ms
+2018-09-17 00:50:16.977 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:50:16.988 +10:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:50:16.995 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre>DEV002</cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 1 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:50:26.276 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:50:39.347 +10:00 [Error] User request - {@processClaim}
+2018-09-17 00:50:39.362 +10:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 00:50:39.373 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 00:50:39.378 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 22378.3604ms.
+2018-09-17 00:50:39.387 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 00:50:39.398 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 22408.7723ms
+2018-09-17 00:51:13.359 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 00:51:13.370 +10:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 00:51:13.375 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre>DEV002</cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 1 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 00:51:18.801 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 00:52:14.730 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 00:52:14.804 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 00:52:19.628 +10:00 [Information] Executed DbCommand ("37"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-17 01:16:55.115 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:16:55.166 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:16:56.337 +10:00 [Information] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-17 01:18:46.457 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:18:46.494 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:18:47.601 +10:00 [Information] Executed DbCommand ("14"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-17 01:18:48.315 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 01:18:48.332 +10:00 [Warning] Query: '"(from CostCenter <generated>_1 in DbSet<CostCenter> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results.
+2018-09-17 01:18:48.390 +10:00 [Information] Executed DbCommand ("30"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 01:18:48.516 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday11, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 01:18:48.520 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-17 01:18:48.525 +10:00 [Error] User request - {@processClaim}
+2018-09-17 01:18:48.720 +10:00 [Information] Executed DbCommand ("41"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-17 01:18:48.732 +10:00 [Error] Completed Request, Return status code 201
+2018-09-17 01:18:48.739 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 216.7857ms.
+2018-09-17 01:18:48.748 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-17 01:18:48.791 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 467.0143ms
+2018-09-17 01:18:57.841 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:18:57.891 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-17 01:19:01.496 +10:00 [Information] Executed DbCommand ("21"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-17 01:19:09.172 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-17 01:19:09.200 +10:00 [Warning] Query: '"(from CostCenter <generated>_1 in DbSet<CostCenter> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results.
+2018-09-17 01:19:09.431 +10:00 [Information] Executed DbCommand ("202"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-17 01:19:09.620 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday11, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-17 01:19:13.278 +10:00 [Information] Processing GetExpenseForCostCenter Request

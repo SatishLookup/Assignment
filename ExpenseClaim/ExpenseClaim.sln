@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExpenseClaim", "ExpenseClaim.csproj", "{0BE0521E-325A-4668-9E52-A4ECCC2205EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTextExpenseClaim", "..\UnitTextExpenseClaim\UnitTextExpenseClaim.csproj", "{9CE0E5DC-926E-434C-BC7D-CA24892991DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BE0521E-325A-4668-9E52-A4ECCC2205EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE0521E-325A-4668-9E52-A4ECCC2205EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE0521E-325A-4668-9E52-A4ECCC2205EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE0521E-325A-4668-9E52-A4ECCC2205EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CE0E5DC-926E-434C-BC7D-CA24892991DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CE0E5DC-926E-434C-BC7D-CA24892991DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CE0E5DC-926E-434C-BC7D-CA24892991DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CE0E5DC-926E-434C-BC7D-CA24892991DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FD831D0-8DDC-43C6-8177-850AF3336E8B}
+	EndGlobalSection
+EndGlobal

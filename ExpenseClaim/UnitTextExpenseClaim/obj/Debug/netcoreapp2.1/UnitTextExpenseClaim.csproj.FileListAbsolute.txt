@@ -1,0 +1,17 @@
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\xunit.runner.reporters.netcoreapp10.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\xunit.runner.utility.netcoreapp10.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\UnitTextExpenseClaim.deps.json
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\UnitTextExpenseClaim.runtimeconfig.json
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\UnitTextExpenseClaim.runtimeconfig.dev.json
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\UnitTextExpenseClaim.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.pdb
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.csprojAssemblyReference.cache
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.csproj.CoreCompileInputs.cache
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.AssemblyInfoInputs.cache
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.AssemblyInfo.cs
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.csproj.CopyComplete
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\bin\Debug\netcoreapp2.1\UnitTextExpenseClaim.pdb
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.dll
+C:\Satish\Assignment\ExpenseClaim\UnitTextExpenseClaim\obj\Debug\netcoreapp2.1\UnitTextExpenseClaim.pdb

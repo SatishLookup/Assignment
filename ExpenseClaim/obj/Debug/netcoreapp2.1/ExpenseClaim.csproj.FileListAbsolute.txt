@@ -1,0 +1,13 @@
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.deps.json
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.runtimeconfig.json
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.runtimeconfig.dev.json
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.dll
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\bin\Debug\netcoreapp2.1\ExpenseClaim.pdb
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.csproj.CoreCompileInputs.cache
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.RazorAssemblyInfo.cache
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.RazorAssemblyInfo.cs
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.AssemblyInfoInputs.cache
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.AssemblyInfo.cs
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.RazorTargetAssemblyInfo.cache
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.dll
+C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\obj\Debug\netcoreapp2.1\ExpenseClaim.pdb

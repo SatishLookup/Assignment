@@ -1,0 +1,113 @@
+2018-09-15 09:14:25.083 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:14:25.327 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:14:28.103 +10:00 [Information] Executed DbCommand ("20"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-15 09:34:44.727 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:34:44.807 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:34:47.159 +10:00 [Information] Executed DbCommand ("46"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-15 09:34:56.091 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-15 09:34:56.144 +10:00 [Warning] Query: '"(from CostCenter <generated>_1 in DbSet<CostCenter> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results.
+2018-09-15 09:34:56.201 +10:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-15 09:34:56.424 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1/total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-15 09:34:56.441 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-15 09:35:03.536 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 7415.3837ms
+2018-09-15 09:35:03.877 +10:00 [Error] An unhandled exception has occurred while executing the request.
+System.Xml.XmlException: The 'total' start tag on line 5 position 2 does not match the end tag of 'expense'. Line 6, position 3.
+   at System.Xml.XmlTextReaderImpl.Throw(Exception e)
+   at System.Xml.XmlTextReaderImpl.Throw(String res, String[] args)
+   at System.Xml.XmlTextReaderImpl.ThrowTagMismatch(NodeData startTag)
+   at System.Xml.XmlTextReaderImpl.ParseEndElement()
+   at System.Xml.XmlTextReaderImpl.ParseElementContent()
+   at System.Xml.XmlTextReaderImpl.Read()
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r)
+   at System.Xml.Linq.XContainer.ReadContentFrom(XmlReader r, LoadOptions o)
+   at System.Xml.Linq.XDocument.Load(XmlReader reader, LoadOptions options)
+   at System.Xml.Linq.XDocument.Parse(String text, LoadOptions options)
+   at System.Xml.Linq.XDocument.Parse(String text)
+   at ExpenseClaim.Controllers.ClaimController.CreateClaim(String email) in C:\Satish\Assignment\ExpenseClaim\ExpenseClaim\Controllers\ClaimController.cs:line 92
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-09-15 09:39:07.447 +10:00 [Warning] No type was specified for the decimal column '"Gst"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:39:07.529 +10:00 [Warning] No type was specified for the decimal column '"TotalAmount"' on entity type '"Expenses"'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values using 'ForHasColumnType()'.
+2018-09-15 09:39:09.700 +10:00 [Information] Executed DbCommand ("45"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Expenses] AS [e])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-09-15 09:39:11.462 +10:00 [Information] Route matched with "{action = \"CreateClaim\", controller = \"Claim\"}". Executing action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)"
+2018-09-15 09:39:11.760 +10:00 [Warning] Query: '"(from CostCenter <generated>_1 in DbSet<CostCenter> select [<generated>_1]).FirstOrDefault()"' uses First/FirstOrDefault/Last/LastOrDefault operation without OrderBy and filter which may lead to unpredictable results.
+2018-09-15 09:39:11.932 +10:00 [Information] Executed DbCommand ("16"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [c].[CostCenterId], [c].[CostCenterName], [c].[IsDefault]
+FROM [CostCenter] AS [c]"
+2018-09-15 09:39:12.395 +10:00 [Information] Executing action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" with arguments (["Hi Yvaine,
+Please create an expense claim for the below. Relevant details are marked up as
+requested…
+<expense><cost_centre></cost_centre>
+<total>1024.01</total><payment_method>personal card</payment_method>
+</expense>
+From: Ivan Castle
+Sent: Friday, 16 February 2018 10:32 AM
+To: Antoine Lloyd <Antoine.Lloyd@example.com>
+Subject: test
+Hi Antoine,
+Please create a reservation at the <vendor>Viaduct Steakhouse</vendor> our
+<description>development team’s project end celebration dinner</description> on
+<date>Tuesday 25 April 2017</date>. We expect to arrive around
+7.15pm. Approximately 12 people but I’ll confirm exact numbers closer to the day.
+Regards,
+Ivan"]) - Validation state: Valid
+2018-09-15 09:39:12.409 +10:00 [Information] Processing GetExpenseForCostCenter Request
+2018-09-15 09:39:21.579 +10:00 [Error] User request - {@processClaim}
+2018-09-15 09:39:27.763 +10:00 [Information] Executed DbCommand ("15"ms) [Parameters=["@p0='?' (DbType = Guid), @p1='?' (Size = 450), @p2='?' (DbType = DateTime2), @p3='?' (Size = 4000), @p4='?' (DbType = Decimal), @p5='?' (Size = 4000), @p6='?' (DbType = Decimal), @p7='?' (DbType = DateTime2), @p8='?' (Size = 4000)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Expenses] ([Id], [CostCenterId], [CreatedAt], [Description], [Gst], [PaymentMethod], [TotalAmount], [TransactionDate], [Vendor])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8);"
+2018-09-15 09:39:27.784 +10:00 [Error] Completed Request, Return status code 201
+2018-09-15 09:39:27.803 +10:00 [Information] Executed action method "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtRouteResult" in 15391.1087ms.
+2018-09-15 09:39:27.826 +10:00 [Information] Executing ObjectResult, writing value of type '"ExpenseClaim.Modules.ClaimsDto"'.
+2018-09-15 09:39:27.913 +10:00 [Information] Executed action "ExpenseClaim.Controllers.ClaimController.CreateClaim (ExpenseClaim)" in 16433.3546ms
